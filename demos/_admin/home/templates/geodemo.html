@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Geo Demo - Redis</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="https://redis.io/wp-content/themes/wpx/assets/images/favicons/favicon-32x32.png?v=1720078588">
+
+        <!-- App css -->
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+        <link href="../assets/css/redis.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        <div class="page-wrapper" style="margin-left: 50px;"    >
+            <!-- Page Content-->
+            <div class="page-content">
+                <div class="container-fluid">
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="row">
+                                    <div class="col">
+                                        <h4 class="page-title">Geo Search Demo</h4>
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                            <li class="breadcrumb-item active">Geo Search Demo</li>
+                                        </ol>
+                                    </div><!--end col-->
+                                    <div class="col-auto align-self-center">
+                                        &nbsp;
+                                        <input type="hidden" id="redis_host" value="{{redis_host}}">
+                                        <input type="hidden" id="redis_port" value="{{redis_port}}">
+                                        <input type="hidden" id="redis_user" value="{{redis_user}}">
+                                        <input type="hidden" id="redis_pass" value="{{redis_pass}}">
+                                    </div><!--end col-->  
+                                </div><!--end row-->                                                              
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+                    </div><!--end row-->
+                    <!-- end page title end breadcrumb -->
+                    
+                </div><!-- container -->
+
+                <div class="modal fade bd-example-modal-sm" id="indexSelectModal" tabindex="-1" aria-labelledby="indexSelectModalLabel" aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h6 class="modal-title m-0" id="indexSelectModalLabel">Select Index</h6>
+                                <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"><i class="la la-times"></i></span>
+                                </button>
+                            </div><!--end modal-header-->
+                            <div class="modal-body text-center">
+                                <h4 class="mb-1">Select the Index that contains GeoData</h4> 
+                                <select name="indexname" id="indexname" class="form-control"></select>
+                            </div><!--end modal-body-->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary btn-xs" data-dismiss="modal" onclick="loadgeodata()">Save changes</button>
+                            </div><!--end modal-footer-->
+                        </div><!--end modal-content-->
+                    </div><!--end modal-dialog-->
+                </div>
+
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">World Map</h4>
+                                        <p class="text-muted mb-0">Example of vector map.</p>  
+                                    </div><!--end card-header-->
+                                    <div class="card-body">              
+                                        <div id="world-map-markers" style="height: 600px"></div>        
+                                    </div><!--end card-body-->
+                                </div> <!--end card-->
+                            </div> <!-- end col -->
+                        </div> <!-- end row -->
+
+                    </div>
+
+
+                    <footer class="footer text-center text-sm-left">
+                        &copy; 2020 Dastone <span class="d-none d-sm-inline-block float-right">Crafted with <i class="mdi mdi-heart text-danger"></i> by Mannatthemes</span>
+                    </footer><!--end footer-->
+                </div>
+                <!-- end page content -->
+
+                <footer class="footer text-center text-sm-left">
+                    &copy; 2024 Redis
+                </footer><!--end footer-->
+            </div>
+            <!-- end page content -->
+        </div>
+        <!-- end page-wrapper -->
+
+        
+
+
+        <!-- jQuery  -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/metismenu.min.js"></script>
+        <script src="../assets/js/waves.js"></script>
+        <script src="../assets/js/feather.min.js"></script>
+        <script src="../assets/js/simplebar.min.js"></script>
+        <script src="../assets/js/moment.js"></script>
+
+        <!-- App js -->
+        <script src="../assets/js/app.js"></script>
+
+        <!-- jQuery  -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+        <script src="../assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="../assets/plugins/jvectormap/jquery-jvectormap-world.js"></script>
+        <!-- <script src="../assets/pages/jvectormap_demo_init.js"></script> -->
+
+        
+        <script type="text/javascript">
+    
+        const str = "{{index_name}}";
+        if (str.length === 0) {
+            console.log("--> Getting list of indexes")
+            var serverurl = "http://127.0.0.1:5001/indexlist";
+            let request = new XMLHttpRequest();
+            request.open("GET", serverurl);
+            request.setRequestHeader("Content-type", "application/json");
+            request.send();
+            request.onload = () => {
+                var responseMsg = JSON.parse(request.response);
+                let i = 0;
+                    while (i < responseMsg.length) {
+                        index_name = responseMsg[i]
+                        console.log(index_name);
+                        $('#indexname').append($('<option>', {value: index_name, text: index_name}));        
+                        i++;
+                    }
+                
+                $('#indexSelectModal').modal('show');
+                
+            }
+        };
+
+        function render_map(map_data) {
+
+        //!function($) {
+            "use strict";
+            $("#world-map-markers").empty();
+
+            var map_markers = JSON.parse(map_data);
+            var markers = []
+            let i = 0
+            while (i < map_markers.length) {
+                //console.log(map_markers[i])
+                var this_marker = {"latLng" : [map_markers[i]['latitude'], map_markers[i]['longitude']], name : map_markers[i]['name'] };
+                //console.log(this_marker);
+                markers.push(this_marker);
+                i++;
+            } 
+
+            var VectorMap = function() {};
+
+            VectorMap.prototype.init = function() {
+                //various examples
+                $('#world-map-markers').vectorMap({
+                map : 'world_mill_en',
+                scaleColors : ['#4d79f6', '#4d79f6'],
+                normalizeFunction : 'polynomial',
+                hoverOpacity : 0.7,
+                hoverColor : false,
+                regionStyle : {
+                initial : {
+                    fill : '#e2e3e8'
+                }
+                },
+                markerStyle: {
+                        initial: {
+                            r: 4,
+                            'fill': '#8a8da0',
+                            'fill-opacity': 1,
+                            'stroke': '#fff',
+                            'stroke-width' : 1,
+                            'stroke-opacity': 0.1
+                        },
+
+                        hover: {
+                            // 'stroke': '#fff',
+                            // 'fill-opacity': 1,
+                            // 'stroke-width': 1.5,
+                            // 'padding': 20,
+                            'url': '../assets/images/map_marker.png',
+                            'offset': [0, 1]
+                        },
+                    },
+                backgroundColor : 'transparent',
+                markers : markers
+            });
+
+
+            },
+
+
+            //init
+            $.VectorMap = new VectorMap, $.VectorMap.Constructor = VectorMap;
+            $.VectorMap.init();
+        }
+            // }(window.jQuery),
+
+            //initializing 
+            // function($) {
+            // "use strict";
+            // $.VectorMap.init()
+            // }(window.jQuery);
+
+
+        function loadgeodata(){
+            console.log("Getting Geo Records");
+            var serverurl = "http://127.0.0.1:5001/geodata";
+            var index_name = $("#indexname").find(":selected").val();
+            var data = 'index_name=' + index_name;
+
+            let request = new XMLHttpRequest();
+            request.open("POST", serverurl);
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            request.send(data);
+            request.onload = () => {
+                var responseMsg = request.response;
+                //console.log(responseMsg);
+                render_map(responseMsg);
+            }            
+        }
+
+
+            $(document).ready(function() {
+                console.log("page loaded");
+            });
+
+
+        </script>   
+
+    </body>
+
+</html>

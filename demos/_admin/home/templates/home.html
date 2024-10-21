@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Redis - Demo-in-a-Box</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="https://redis.io/wp-content/themes/wpx/assets/images/favicons/favicon-32x32.png?v=1720078588">
+
+        <!-- App css -->
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/redis.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        <div class="page-wrapper" style="margin-left: 50px;"    >
+            <!-- Page Content-->
+            <div class="page-content">
+                <div class="container-fluid">
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="row">
+                                    <div class="col">
+                                        <h4 class="page-title">Start</h4>
+                                    </div><!--end col-->
+                                    <div class="col-auto align-self-center">
+                                        &nbsp;
+                                    </div><!--end col-->  
+                                </div><!--end row-->                                                              
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+                    </div><!--end row-->
+                    <!-- end page title end breadcrumb -->
+                    <!-- Redis Connection info -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Redis Connection</h4>
+                                    <p class="text-muted mb-0">Enter the connection data to your Redis instance.</p>
+                                </div><!--end card-header-->
+                                <div class="card-body">
+                                    <div class="general-label">
+                                        <form class="form-inline">
+                                            <div class="form-group col-sm-4">
+                                                <label class="col-sm-2 col-form-label text-right" for="redis_host">Server URL</label>
+                                                <input type="text" class="form-control" id="redis_host" value="{{redis_host}}" style="width: 80% !important;">
+                                            </div>
+                                            <div class="form-group col-sm-2">
+                                                <label class="col-sm-2 col-form-label text-right" for="redis_port">Port</label>
+                                                <input type="text" class="form-control ml-2" id="redis_port" value="{{redis_port}}">
+                                            </div>
+                                            <div class="form-group col-sm-2">
+                                                <label class="col-sm-2 col-form-label text-right" for="redis_user">Username</label>
+                                                <input type="text" class="form-control ml-2" id="redis_user" value="{{redis_user}}">
+                                            </div>
+                                            <div class="form-group col-sm-2">
+                                                <label class="col-sm-2 col-form-label text-right" for="redis_pass">Password</label>
+                                                <input type="password" class="form-control ml-2" id="redis_pass" value="{{redis_pass}}">
+                                            </div>
+                                            <div class="form-group col-sm-1">
+                                                <button type="button" class="btn btn-primary ml-2" onclick="testlogin()">Test Connection</button>
+                                            </div>
+                                            <div class="form-group col-sm-1">
+                                                <div class="card-body">    
+                                                    <a href="#" id="connsuccess" class="badge badge-success" style="display:none;">Connection Successful</a>
+                                                    <a href="#" id="connfail" class="badge badge-danger" style="display:none;">Connection Failed</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div><!--end card-body-->
+                            </div>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                    <!-- end page title end breadcrumb -->
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="pricingTable1 text-center">
+                                        <h6 class="title1 pt-3 pb-2 m-0">Data Generator</h6>
+                                        <p class="text-muted p-3 mb-0">Define a schema and create data for Redis demos. The generated data will be saved to the database configured above.</p>
+                                       <hr class="hr-dashed">
+                                        <div class="bottombutton">
+                                            <a href="/datagenerator" class="btn btn-dark py-2 px-5 font-16"><span>Click Here</span></a>
+                                        </div>  
+                                    </div><!--end pricingTable-->
+                                </div><!--end card-body-->
+                            </div> <!--end card-->                                   
+                        </div><!--end col-->
+
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="pricingTable1 text-center">
+                                        <h6 class="title1 pt-3 pb-2 m-0">Geospatial Demo</h6>
+                                        <p class="text-muted p-3 mb-0">Demo showing example of geospatial searches.</p>
+                                        <hr class="hr-dashed">                                          
+                                        <div class="bottombutton">
+                                            <a href="/geodemo" class="btn btn-dark py-2 px-5 font-16"><span>Click Here</span></a>
+                                        </div>  
+                                    </div><!--end pricingTable-->
+                                </div><!--end card-body-->
+                            </div> <!--end card-->                                   
+                        </div><!--end col-->
+
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="pricingTable1 text-center">
+                                        <h6 class="title1 pt-3 pb-2 m-0">Vector Search</h6>
+                                        <p class="text-muted p-3 mb-0">It is a long established fact that a reader will be distracted by the readable.</p>
+                                       <hr class="hr-dashed">
+                                        <div class="bottombutton">
+                                            <a href="#" class="btn btn-dark py-2 px-5 font-16"><span>Click Here</span></a>
+                                        </div>  
+                                    </div><!--end pricingTable-->
+                                </div><!--end card-body-->
+                            </div> <!--end card-->                                   
+                        </div><!--end col-->
+
+                        <div class="col-lg-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="pricingTable1 text-center">
+                                        <h6 class="title1 pt-3 pb-2 m-0">Hash Example</h6>
+                                        <p class="text-muted p-3 mb-0">An employee self-service UI where the user data is stored as hashes in Redis.</p>
+                                       <hr class="hr-dashed">
+                                        <div class="bottombutton">
+                                            <a href="#" class="btn btn-dark py-2 px-5 font-16"><span>Click Here</span></a>
+                                        </div>  
+                                    </div><!--end pricingTable-->
+                                </div><!--end card-body-->
+                            </div> <!--end card-->                                   
+                        </div><!--end col-->
+                    </div><!--end row-->
+
+                </div><!-- container -->
+
+                <footer class="footer text-center text-sm-left">
+                    &copy; 2024 Redis
+                </footer><!--end footer-->
+            </div>
+            <!-- end page content -->
+        </div>
+        <!-- end page-wrapper -->
+
+        
+
+
+        <!-- jQuery  -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/metismenu.min.js"></script>
+        <script src="../assets/js/waves.js"></script>
+        <script src="../assets/js/feather.min.js"></script>
+        <script src="../assets/js/simplebar.min.js"></script>
+        <script src="../assets/js/moment.js"></script>
+
+        <!-- App js -->
+        <script src="../assets/js/app.js"></script>
+
+        <!-- jQuery  -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+        
+        <script type="text/javascript">
+        
+            $(document).ready(function() {
+                console.log("page loaded");
+            });
+
+
+            function testlogin() {
+            console.log("Testing login to Redis instance");
+            $("#connsuccess").hide();
+            $("#connfail").hide();
+            var serverurl = "http://127.0.0.1:5001/testconn"
+            var redis_host = $("#redis_host").val();
+            var redis_port = $("#redis_port").val();
+            var redis_user = $("#redis_user").val();
+            var redis_pass = $("#redis_pass").val();
+            var data = 'redis_host=' + redis_host + '&redis_port=' + redis_port + '&redis_user=' + redis_user + '&redis_pass=' + redis_pass;
+
+            let request = new XMLHttpRequest();
+            request.open("POST", serverurl);
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            request.send(data);
+            request.onload = () => {
+                var responseMsg = request.response;
+                console.log(responseMsg);
+                if (responseMsg == "success") {
+                    $("#connsuccess").show();
+                }
+                else {
+                    $("#connfail").show();
+                }
+            }
+        }
+
+    
+        </script>   
+
+
+    </body>
+
+</html>

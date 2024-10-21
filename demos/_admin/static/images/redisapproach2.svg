@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 200 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="250" style="fill: rgb(12, 33, 51);">
+    <title>background</title>
+  </rect>
+  <defs/>
+  <g transform="matrix(1, 0, 0, 1, 70.454369, -22.19133)" style="pointer-events: none;">
+    <title>LDAP</title>
+    <path class="st0" d="M 100.156 140.821 L 111.656 147.521 C 112.556 148.021 113.056 148.921 113.056 149.921 L 113.056 163.321 C 113.056 164.321 112.556 165.221 111.656 165.721 L 100.056 172.421 C 99.156 172.921 98.156 172.921 97.256 172.421 L 85.756 165.721 C 84.856 165.221 84.356 164.321 84.356 163.321 L 84.356 149.921 C 84.356 148.921 84.856 148.021 85.756 147.521 L 97.356 140.821 C 98.256 140.421 99.256 140.421 100.156 140.821 Z" style="stroke: rgb(255, 68, 56); fill: none; stroke-miterlimit: 10;"/>
+    <path class="st0" d="M 98.456 156.021 C 96.656 156.021 95.256 154.621 95.256 152.821 L 95.256 150.421 C 95.256 148.621 96.656 147.221 98.456 147.221 C 100.256 147.221 101.656 148.621 101.656 150.421 L 101.656 152.821 C 101.656 154.521 100.256 156.021 98.456 156.021 Z M 106.656 164.521 L 106.656 162.321 C 106.656 159.921 102.956 157.921 98.456 157.921 C 93.956 157.921 90.256 159.921 90.256 162.321 L 90.256 164.521" style="fill: none; stroke-miterlimit: 10; stroke: rgb(255, 255, 255);"/>
+    <circle class="st1" cx="98.656" cy="140.421" r="2.3" style="fill: rgb(255, 255, 255);"/>
+    <circle class="st2" cx="98.656" cy="172.321" r="2.3" style="fill: rgb(12, 33, 51);"/>
+    <path class="st1" d="M 98.656 171.221 C 99.256 171.221 99.756 171.721 99.756 172.321 C 99.756 172.921 99.256 173.421 98.656 173.421 C 98.056 173.421 97.556 172.921 97.556 172.321 C 97.556 171.721 98.056 171.221 98.656 171.221 M 98.656 170.021 C 97.356 170.021 96.356 171.021 96.356 172.321 C 96.356 173.621 97.356 174.621 98.656 174.621 C 99.956 174.621 100.956 173.621 100.956 172.321 C 100.956 171.021 99.956 170.021 98.656 170.021 Z" style="fill: rgb(220, 255, 30);"/>
+    <circle class="st2" cx="84.456" cy="148.321" r="2.3" style="fill: rgb(12, 33, 51);"/>
+    <path class="st1" d="M 84.456 147.121 C 85.056 147.121 85.556 147.621 85.556 148.221 C 85.556 148.821 85.056 149.321 84.456 149.321 C 83.856 149.321 83.356 148.821 83.356 148.221 C 83.356 147.621 83.856 147.121 84.456 147.121 M 84.456 146.021 C 83.156 146.021 82.156 147.021 82.156 148.321 C 82.156 149.621 83.156 150.621 84.456 150.621 C 85.756 150.621 86.756 149.621 86.756 148.321 C 86.756 147.021 85.756 146.021 84.456 146.021 Z" style="fill: rgb(220, 255, 30);"/>
+    <circle class="st2" cx="112.456" cy="148.321" r="2.3" style="fill: rgb(12, 33, 51);"/>
+    <path class="st1" d="M 112.456 147.121 C 113.056 147.121 113.556 147.621 113.556 148.221 C 113.556 148.821 113.056 149.321 112.456 149.321 C 111.856 149.321 111.356 148.821 111.356 148.221 C 111.356 147.621 111.856 147.121 112.456 147.121 M 112.456 146.021 C 111.156 146.021 110.156 147.021 110.156 148.321 C 110.156 149.621 111.156 150.621 112.456 150.621 C 113.756 150.621 114.756 149.621 114.756 148.321 C 114.756 147.021 113.756 146.021 112.456 146.021 Z" style="fill: rgb(220, 255, 30);"/>
+    <circle class="st1" cx="84.456" cy="164.421" r="2.3" style="fill: rgb(255, 255, 255);"/>
+    <circle class="st1" cx="112.456" cy="164.421" r="2.3" style="fill: rgb(255, 255, 255);"/>
+  </g>
+  <g style="pointer-events: none;" transform="matrix(1, 0, 0, 1, 17.370817, 4.203156)">
+    <title>Users</title>
+    <path d="M 44.391 32.319 C 44.391 29.852 46.759 27.857 49.698 27.857 C 52.637 27.857 55.013 29.852 55.013 32.319" stroke="#FF4438" stroke-width="1.5625" stroke-miterlimit="10" style="fill: none;"/>
+    <path d="M 44.375 38.678 C 44.375 41.145 46.759 43.141 49.69 43.141 C 52.623 43.141 55.006 41.145 55.006 38.678" stroke="#FF4438" stroke-width="1.5625" stroke-miterlimit="10" style="fill: none;"/>
+    <path d="M 44.391 32.319 L 44.375 38.678" stroke="#FF4438" stroke-width="1.5625" stroke-miterlimit="10" style=""/>
+    <path d="M 55.014 32.312 L 55.006 38.686" stroke="#FF4438" stroke-width="1.5625" stroke-miterlimit="10" style=""/>
+    <path d="M 40.963 54.784 C 40.963 51.35 36.013 48.57 29.906 48.57 C 23.798 48.57 18.849 51.35 18.849 54.784 L 18.849 58.105 L 40.971 58.105 L 40.971 54.784 L 40.963 54.784 Z" stroke-width="1.5625" stroke-miterlimit="10" style="stroke: rgb(220, 255, 30); fill: rgb(12, 33, 51);"/>
+    <path d="M 64.357 53.97 C 64.357 49.69 57.846 46.225 49.812 46.225 C 41.778 46.225 35.268 49.69 35.268 53.97 L 35.268 58.105 L 64.349 58.105 L 64.349 53.97 L 64.357 53.97 Z" stroke="#FF4438" stroke-width="1.5625" stroke-miterlimit="10" style="fill: rgb(12, 33, 51);"/>
+    <path d="M 25.741 36.927 C 25.741 34.993 27.599 33.424 29.899 33.424 C 32.198 33.424 34.064 34.985 34.064 36.927" stroke-width="1.5625" stroke-miterlimit="10" style="fill: none; stroke: rgb(220, 255, 30);"/>
+    <path d="M 25.733 41.915 C 25.733 43.849 27.599 45.418 29.899 45.418 C 32.198 45.418 34.064 43.857 34.064 41.915" stroke-width="1.5625" stroke-miterlimit="10" style="fill: none; stroke: rgb(220, 255, 30);"/>
+    <path d="M 25.741 36.927 L 25.733 41.914" stroke-width="1.5625" stroke-miterlimit="10" style="stroke: rgb(220, 255, 30);"/>
+    <path d="M 34.072 36.919 L 34.064 41.915" stroke-width="1.5625" stroke-miterlimit="10" style="stroke: rgb(220, 255, 30);"/>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, 21.954821, 36.420174)" style="pointer-events: none;">
+    <title>ClientApp</title>
+    <path d="M 60.97 105.305 L 13.068 105.305" stroke="white" stroke-width="1.5625" stroke-miterlimit="10" style=""/>
+    <path d="M 25.524 117.401 C 26.434 116.484 30.162 112.959 36.064 112.613 C 43.141 112.199 47.793 116.681 48.52 117.401" stroke="white" stroke-width="1.5625" stroke-miterlimit="10" style="fill: none;"/>
+    <path d="M 34.048 87.239 L 28.865 100.599" stroke="white" stroke-width="1.5625" stroke-miterlimit="10" style=""/>
+    <path d="M 36.309 99.878 C 37.668 99.878 38.802 98.744 38.802 97.386 L 38.802 95.423 C 38.802 94.445 39.556 93.691 40.534 93.691 C 39.556 93.684 38.802 92.93 38.802 91.946 L 38.802 89.983 C 38.802 88.625 37.668 87.49 36.309 87.49" stroke="white" stroke-width="1.5625" stroke-miterlimit="10" style="fill: none;"/>
+    <path d="M 26.604 87.497 C 25.245 87.497 24.111 88.632 24.111 89.99 L 24.111 91.953 C 24.111 92.93 23.357 93.684 22.38 93.684 C 23.357 93.691 24.111 94.445 24.111 95.43 L 24.111 97.393 C 24.111 98.751 25.245 99.885 26.604 99.885" stroke="white" stroke-width="1.5625" stroke-miterlimit="10" style="fill: none;"/>
+    <path d="M 59.625 78.118 L 14.413 78.118 C 13.67 78.118 13.068 78.722 13.068 79.468 L 13.068 109.305 C 13.068 110.05 13.67 110.655 14.413 110.655 L 59.625 110.655 C 60.368 110.655 60.97 110.05 60.97 109.305 L 60.97 79.468 C 60.97 78.722 60.368 78.118 59.625 78.118 Z" stroke-width="1.5625" stroke-miterlimit="10" style="fill: none; stroke: rgb(220, 255, 30);"/>
+  </g>
+  <g transform="matrix(0.363261, 0, 0, 0.363261, -47.783867, 136.700897)" style="pointer-events: none;">
+    <title>Shard</title>
+    <rect width="51.126" height="44.276" transform="matrix(0.866025, 0.5, 0, 1.154701, 249.501999, 170.559006)" stroke="#FF4438" stroke-width="0.8" stroke-linejoin="bevel"/>
+    <rect width="51.126" height="44.276" transform="matrix(0.866025, -0.5, 0, 1.154701, 293.777008, 196.121002)" stroke="#FF4438" stroke-width="0.8" stroke-linejoin="bevel"/>
+    <rect width="51.126" height="44.276" transform="matrix(0.866025, 0.5, 0, 1.154701, 249.503006, 170.559006)" fill="#FF4438" stroke="#091A23" stroke-width="0.8" stroke-linejoin="bevel"/>
+    <rect width="51.126" height="44.276" transform="matrix(0.866025, -0.5, 0, 1.154701, 293.778015, 196.121994)" fill="#6B2B2B" stroke="#091A23" stroke-width="0.8" stroke-linejoin="bevel"/>
+    <rect width="51.126" height="44.276" transform="matrix(0.866025, 0.5, -1, 0.57735, 293.779999, 144.994995)" fill="#FF4438" stroke="#FF4438" stroke-width="0.8" stroke-linejoin="bevel"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M309.883 177.306L298.705 170.853L309.882 164.399L321.06 170.853L309.883 177.306Z" fill="white"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M293.644 187.505L281.024 180.218L299.191 177.028L293.665 187.516L293.651 187.508L293.644 187.505Z" fill="white"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M281.61 174.32C278.517 176.106 273.502 176.106 270.408 174.32C267.314 172.534 267.314 169.638 270.408 167.852C273.501 166.066 278.516 166.066 281.61 167.852C284.704 169.638 284.704 172.534 281.61 174.32Z" fill="white"/>
+    <path d="M300.623 157.643C300.869 158.903 301.212 160.308 299.121 161.515C297.253 162.594 294.917 162.048 293.535 161.307C294.806 161.568 296.304 161.509 297.52 160.77C299.844 159.339 299.33 157.143 297.363 156.007C295.011 154.649 291.553 154.687 288.494 156.453C286.306 157.716 284.424 159.76 283.954 161.545C285.284 162.335 287.794 162.912 287.872 162.645C288.311 161.115 288.824 159.997 289.654 159.105C289.849 161.247 290.164 166.3 290.445 167.059C291.236 167.448 294.113 168.058 294.558 167.801C294.694 167.723 294.733 167.611 294.733 167.455C294.582 165.899 294.343 164.564 294.036 163.322C295.967 164.288 299.06 165.046 301.548 163.61C303.775 162.324 304.381 160.126 301.782 157.463C301.455 157.14 300.566 157.253 300.622 157.643L300.623 157.643ZM295.175 157.426C296.313 158.083 295.748 159.054 294.722 159.647C294.174 159.963 293.609 160.124 293.09 160.208C292.778 159.321 292.437 158.423 292.074 157.46C293.418 156.908 294.485 157.027 295.175 157.426L295.175 157.426Z" fill="white"/>
+    <path d="M338.056 187.6L293.78 213.163L249.504 187.6" stroke="#FF4438" stroke-opacity="0.15" stroke-width="0.8" stroke-linejoin="bevel"/>
+    <path d="M338.055 187.601L293.779 213.163L249.502 187.601" stroke="#091A23" stroke-width="0.8" stroke-linejoin="bevel"/>
+    <rect width="51.126" height="44.276" transform="matrix(0.866025, 0.5, -1, 0.57735, 293.779999, 144.994995)" stroke="#091A23" stroke-width="0.8" stroke-linejoin="bevel"/>
+    <path d="M338.052 204.642L293.776 230.204L249.5 204.642" stroke="#091A23" stroke-width="0.8" stroke-linejoin="bevel"/>
+    <path d="M293.74 196.022L293.74 247.465" stroke="#091A23" stroke-width="0.8"/>
+    <path d="M338.274 187.459L293.417 213.504" stroke="#091A23" stroke-width="0.8" stroke-linejoin="bevel"/>
+    <path d="M338.243 170.452L293.421 196.361" stroke="#091A23" stroke-width="0.8" stroke-linejoin="bevel"/>
+    <path d="M338.263 204.476L293.354 230.511" stroke="#091A23" stroke-width="0.8" stroke-linejoin="bevel"/>
+  </g>
+  <g transform="matrix(0, -0.60205, 0.60205, 0, 51.610199, 86.658257)" style="transform-origin: 12px 12px; pointer-events: none;">
+    <title>Arrows</title>
+    <defs/>
+    <path d="M 53.834 -3.323 L 10.311 -3.323 L 15.901 -8.913 L 14.481 -10.323 L 6.481 -2.323 L 14.481 5.677 L 15.891 4.267 L 10.311 -1.323 L 53.834 -1.323 L 53.834 -3.323 Z" style="fill: rgb(255, 255, 255);">
+      <title>Arrow1</title>
+    </path>
+    <path d="M 53.834 18.56 L 10.311 18.56 L 15.901 24.15 L 14.481 25.56 L 6.481 17.56 L 14.481 9.56 L 15.891 10.97 L 10.311 16.56 L 53.834 16.56 L 53.834 18.56 Z" style="fill: rgb(255, 255, 255); transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(-1, 0, 0, -1, 0.000017, -0.000006)">
+      <title>Arrow2</title>
+    </path>
+    <path d="M 74.014 125.708 L -3.853 125.708 L 1.737 131.298 L 0.317 132.708 L -7.683 124.708 L 0.317 116.708 L 1.727 118.118 L -3.853 123.708 L 74.014 123.708 L 74.014 125.708 Z" style="fill: rgb(255, 255, 255); transform-origin: 15.994px 124.708px;" transform="matrix(0.601708, -0.798716, 0.798716, 0.601708, -0.000003, 0.000003)">
+      <title>Arrow3</title>
+    </path>
+    <path d="M 108.8 109.434 L 30.933 109.434 L 36.523 115.024 L 35.103 116.434 L 27.103 108.434 L 35.103 100.434 L 36.513 101.844 L 30.933 107.434 L 108.8 107.434 L 108.8 109.434 Z" style="fill: rgb(255, 255, 255); transform-origin: 50.78px 108.434px;" transform="matrix(-0.601708, 0.798716, -0.798716, -0.601708, 0.000004, 0.000002)">
+      <title>Arrow4</title>
+    </path>
+    <g transform="matrix(0, 1.660992, -1.660992, 0, 168.181107, -66.78273)">
+      <title>marker1</title>
+      <rect x="24.298" y="68.622" width="11.185" height="10.798" style="fill: rgb(255, 255, 255);" rx="1.531" ry="1.531"/>
+      <text style="fill: rgb(12, 33, 51); font-family: 'Space Grotesk'; font-size: 12px; font-weight: 700; text-transform: capitalize; white-space: pre;" x="27.178" y="78.165">1</text>
+    </g>
+    <g transform="matrix(0, 1.660992, -1.660992, 0, 138.23085, -18.25519)">
+      <title>marker2</title>
+      <rect x="24.298" y="68.622" width="11.185" height="10.798" style="fill: rgb(255, 255, 255);" rx="1.531" ry="1.531"/>
+      <text style="fill: rgb(12, 33, 51); font-family: 'Space Grotesk'; font-size: 12px; font-weight: 700; text-transform: capitalize; white-space: pre;" x="26.326" y="78.165">2</text>
+    </g>
+    <g transform="matrix(0, 1.660992, -1.660992, 0, 156.012802, 26.149235)">
+      <title>marker3</title>
+      <rect x="24.298" y="68.622" width="11.185" height="10.798" style="fill: rgb(255, 255, 255);" rx="1.531" ry="1.531"/>
+      <text style="fill: rgb(12, 33, 51); font-family: 'Space Grotesk'; font-size: 12px; font-weight: 700; text-transform: capitalize; white-space: pre;" x="26.243" y="78.165">3</text>
+    </g>
+    <g transform="matrix(0, 1.660992, -1.660992, 0, 155.430542, 109.526901)">
+      <title>marker4</title>
+      <rect x="24.298" y="68.622" width="11.185" height="10.798" style="fill: rgb(255, 255, 255);" rx="1.531" ry="1.531"/>
+      <text style="fill: rgb(12, 33, 51); font-family: 'Space Grotesk'; font-size: 12px; font-weight: 700; text-transform: capitalize; white-space: pre;" x="26.074" y="78.165">4</text>
+    </g>
+    <path d="M -83.326 3.299 L -126.849 3.299 L -121.259 -2.291 L -122.679 -3.701 L -130.679 4.299 L -122.679 12.299 L -121.269 10.889 L -126.849 5.299 L -83.326 5.299 L -83.326 3.299 Z" style="fill: rgb(255, 255, 255);">
+      <title>Arrow5</title>
+    </path>
+    <g transform="matrix(0, 1.660992, -1.660992, 0, 21.428236, -29.225945)">
+      <title>marker5</title>
+      <rect x="24.298" y="68.622" width="11.185" height="10.798" style="fill: rgb(255, 255, 255);" rx="1.531" ry="1.531"/>
+      <text style="fill: rgb(12, 33, 51); font-family: 'Space Grotesk'; font-size: 12px; font-weight: 700; text-transform: capitalize; white-space: pre;" x="26.29" y="78.182">5</text>
+    </g>
+  </g>
+</svg>

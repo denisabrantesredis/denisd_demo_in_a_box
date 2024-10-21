@@ -1,0 +1,52 @@
+.account-body .auth-header-box {
+    background-color: #FF4438;
+}
+
+.logintext{
+    color: black !important;
+}
+
+.redispanel{
+    color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+    padding: 50px 5px 50px 5px;
+}
+
+.redispaneltitle{
+    margin: 20px 0px 20px 0px;
+    font-family: 'Space Grotesk';
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.redispanelimage {
+    display: grid;
+    text-align: left;
+    margin-bottom: 50px;
+
+}
+
+.redispanelimagetext{
+    margin-top:10px;
+    padding-left: 20px;
+}
+
+.codeexample{
+    font-family:'Courier New', Courier, monospace;
+    font-weight:bold;
+}
+
+.bottombutton{
+    position:absolute; 
+    bottom:0;
+    padding-bottom: 20px;
+    left: 0; 
+    right: 0; 
+    margin-inline: auto; 
+    width: fit-content;    
+}
+
+.pricingTable1 {
+    min-height: 200px;
+}
