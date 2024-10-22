@@ -300,7 +300,7 @@
                         </div><!--end modal-dialog-->
                     </div>
 
-                    <div class="modal fade show" id="modalCreateSuccess" tabindex="-1" role="dialog" aria-labelledby="modalCreateSuccess1" aria-modal="true" style="display: block;">
+                    <div class="modal fade" id="modalCreateSuccess" tabindex="-1" aria-labelledby="modalCreateSuccess1" aria-hidden="true" style="display: none;">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header bg-success">
@@ -390,7 +390,7 @@
             console.log("Testing login to Redis instance");
             $("#connsuccess").hide();
             $("#connfail").hide();
-            var serverurl = "http://127.0.0.1:5001/testconn"
+            var serverurl = "http://127.0.0.1/testconn"
             var redis_host = $("#redis_host").val();
             var redis_port = $("#redis_port").val();
             var redis_user = $("#redis_user").val();
@@ -420,7 +420,7 @@
     
             function createdocs() {
             console.log("Creating Documents");
-            var serverurl = "http://127.0.0.1:5001/createdocs";
+            var serverurl = "http://127.0.0.1/createdocs";
             var redis_host = $("#redis_host").val();
             var redis_port = $("#redis_port").val();
             var redis_user = $("#redis_user").val();
