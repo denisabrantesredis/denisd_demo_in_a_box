@@ -27,7 +27,7 @@ def run_query(query_prefix, index_name, offset, num):
         responses = [f"ERROR RUNNING QUERY: {ex}"]    
     end = time.perf_counter()
     elapsed = end - start
-    print(f'Query Time: {elapsed:.6f} seconds', file=sys.stdout)
+    print(f'Query Time: {elapsed:.6f} seconds', flush=True)
     return responses
 
 def generate_fake_values(attributes):
@@ -135,7 +135,7 @@ def create_index(r, prefix, attributes):
 # Basic Content
 @home_bp.route('/')
 def index():
-    print("--> Loading Home Page", file=sys.stdout)
+    print("--> Loading Home Page", flush=True)
     try:
         redis_host = session['redis_host']
         redis_port = session['redis_port']
@@ -156,7 +156,7 @@ def index():
 
 @home_bp.route('/testconn', methods=['POST'])
 def testconn():
-    print("--> Testing DB Connectivity", file=sys.stdout)
+    print("--> Testing DB Connectivity", flush=True)
     session['redis_host'] = request.values.get('redis_host')
     session['redis_port'] = request.values.get('redis_port')
     session['redis_user'] = request.values.get('redis_user')
@@ -174,12 +174,12 @@ def testconn():
 # Data Generator Content
 @home_bp.route('/datagenerator')
 def load_data_generator():
-    print("--> Loading Data Generator", file=sys.stdout)
+    print("--> Loading Data Generator", flush=True)
     return render_template('/datagen.html', redis_host=session['redis_host'], redis_port=session['redis_port'], redis_user=session['redis_user'], redis_pass=session['redis_pass'])
 
 @home_bp.route('/createdocs', methods=['POST'])
 def create_documents():
-    print("--> Creating Documents", file=sys.stdout)
+    print("--> Creating Documents", flush=True)
 
     session['redis_host'] = request.values.get('redis_host')
     session['redis_port'] = request.values.get('redis_port')
@@ -191,7 +191,7 @@ def create_documents():
     numberofdocs = request.values.get('numberofdocs')
     attributes = json.loads(request.values.get('attributes'))
 
-    print(f"--> Format: {dataformat} | Prefix: {keyprefix} | # of docs: {numberofdocs} | Attributes: {attributes}", file=sys.stdout)
+    print(f"--> Format: {dataformat} | Prefix: {keyprefix} | # of docs: {numberofdocs} | Attributes: {attributes}", flush=True)
 
     try:
         r = get_redis_client(session['redis_host'], session['redis_port'], session['redis_user'], session['redis_pass'])
@@ -218,7 +218,7 @@ def create_documents():
 # Geo Demo Content
 @home_bp.route('/geodemo')
 def load_geodemo_page():
-    print("--> Loading GeoDemo Page", file=sys.stdout)
+    print("--> Loading GeoDemo Page", flush=True)
     try:
         redis_host = session['redis_host']
         redis_port = session['redis_port']
@@ -239,7 +239,7 @@ def load_geodemo_page():
 
 @home_bp.route('/indexlist', methods=['GET'])
 def get_indexlist():
-    print("--> Getting List of Indexes", file=sys.stdout)
+    print("--> Getting List of Indexes", flush=True)
     try:
         redis_client = get_redis_client(session['redis_host'], session['redis_port'], session['redis_user'], session['redis_pass'])
         return get_index_list(redis_client)
@@ -248,12 +248,12 @@ def get_indexlist():
 
 @home_bp.route('/geodata', methods=['POST'])
 def get_geodata():
-    print("--> Get geodata", file=sys.stdout)
+    print("--> Get geodata", flush=True)
     index_name = request.values.get('index_name')
     
     query_prefix = "*"
     doc_list = run_query(query_prefix, index_name, 0, 100)
-    print(doc_list, file=sys.stdout)
+    print(doc_list, flush=True)
     docs_dict = []
     for doc in doc_list:
         docs_dict.append(doc.__dict__)
@@ -265,7 +265,7 @@ def get_geodata():
 # My Redis Demo Content
 @home_bp.route('/login', methods=['POST'])
 def connect():
-    print("--> User Login", file=sys.stdout)
+    print("--> User Login", flush=True)
     username = request.values.get('username')
     password = request.values.get('password')
 
@@ -281,11 +281,11 @@ def connect():
 
 @home_bp.route('/user/<user_key>')
 def get_user_data(user_key=None):
-    print("--> User Data", file=sys.stdout)
+    print("--> User Data", flush=True)
 
     # fetch user key from Redis
     user_key = f"users:{user_key}"
-    print(f"--> SEARCH: {user_key}", file=sys.stdout)
+    print(f"--> SEARCH: {user_key}", flush=True)
     start = time.perf_counter()
     user_doc = r.hgetall(user_key)
     end = time.perf_counter()
