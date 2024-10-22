@@ -137,7 +137,7 @@
         const str = "{{index_name}}";
         if (str.length === 0) {
             console.log("--> Getting list of indexes")
-            var serverurl = "http://127.0.0.1:5001/indexlist";
+            var serverurl = "http://127.0.0.1/indexlist";
             let request = new XMLHttpRequest();
             request.open("GET", serverurl);
             request.setRequestHeader("Content-type", "application/json");
@@ -231,7 +231,7 @@
 
         function loadgeodata(){
             console.log("Getting Geo Records");
-            var serverurl = "http://127.0.0.1:5001/geodata";
+            var serverurl = "http://127.0.0.1/geodata";
             var index_name = $("#indexname").find(":selected").val();
             var data = 'index_name=' + index_name;
 
