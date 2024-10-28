@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Insight Tutorials</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta content="" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="https://redis.io/wp-content/themes/wpx/assets/images/favicons/favicon-32x32.png?v=1720078588">
+
+        <!-- App css -->
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/app.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/css/redis.css" rel="stylesheet" type="text/css" />
+
+    </head>
+
+    <body>
+        <div class="page-wrapper" style="margin-left: 50px;"    >
+            <!-- Page Content-->
+            <div class="page-content">
+                <div class="container-fluid">
+                    <!-- Page-Title -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="row">
+                                    <div class="col">
+                                        <h4 class="page-title">Insight Tutorials</h4>
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                            <li class="breadcrumb-item active">Insight Tutorials</li>
+                                        </ol>                                        
+                                    </div><!--end col-->
+                                    <div class="col-auto align-self-center">
+                                        &nbsp;
+                                    </div><!--end col-->  
+                                </div><!--end row-->                                                              
+                            </div><!--end page-title-box-->
+                        </div><!--end col-->
+                    </div>
+                    <!-- Redis Connection info -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Redis Connection</h4>
+                                    <p class="text-muted mb-0">Enter the connection data to your Redis instance.</p>
+                                </div><!--end card-header-->
+                                <div class="card-body">
+                                    <div class="general-label">
+                                        <form class="form-inline">
+                                            <div class="form-group col-sm-4">
+                                                <label class="col-sm-2 col-form-label text-right" for="redis_host">Server URL</label>
+                                                <input type="text" class="form-control" id="redis_host" value="{{redis_host}}" style="width: 80% !important;">
+                                            </div>
+                                            <div class="form-group col-sm-2">
+                                                <label class="col-sm-2 col-form-label text-right" for="redis_port">Port</label>
+                                                <input type="text" class="form-control ml-2" id="redis_port" value="{{redis_port}}">
+                                            </div>
+                                            <div class="form-group col-sm-2">
+                                                <label class="col-sm-2 col-form-label text-right" for="redis_user">Username</label>
+                                                <input type="text" class="form-control ml-2" id="redis_user" value="{{redis_user}}">
+                                            </div>
+                                            <div class="form-group col-sm-2">
+                                                <label class="col-sm-2 col-form-label text-right" for="redis_pass">Password</label>
+                                                <input type="password" class="form-control ml-2" id="redis_pass" value="{{redis_pass}}">
+                                            </div>
+                                            <div class="form-group col-sm-1">
+                                                <button type="button" class="btn btn-primary ml-2" onclick="testlogin()">Test Connection</button>
+                                            </div>
+                                            <div class="form-group col-sm-1">
+                                                <div class="card-body">    
+                                                    <a href="#" id="connsuccess" class="badge badge-success" style="display:none;">Connection Successful</a>
+                                                    <a href="#" id="connfail" class="badge badge-danger" style="display:none;">Connection Failed</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div><!--end card-body-->
+                            </div>
+                        </div><!--end col-->
+                    </div>                     
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Insight Tutorials</h4>
+                                    <p class="text-muted mb-0">Select a tutorial on the list to see the details</p>
+                                </div><!--end card-header-->
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="nav flex-column nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                                <a class="nav-link waves-effect waves-light active" id="v-pills-geo-tab" data-toggle="pill" href="#v-pills-geo" role="tab" aria-controls="v-pills-geo" aria-selected="true">Geospatial</a>
+                                                <a class="nav-link waves-effect waves-light" id="v-pills-vector-tab" data-toggle="pill" href="#v-pills-vector" role="tab" aria-controls="v-pills-vector" aria-selected="false">Vectors</a>
+                                                <a class="nav-link waves-effect waves-light" id="v-pills-search-tab" data-toggle="pill" href="#v-pills-search" role="tab" aria-controls="v-pills-search" aria-selected="false">Search</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <div class="tab-content mo-mt-2" id="v-pills-tabContent">
+                                                <div class="tab-pane active" id="v-pills-geo" role="tabpanel" aria-labelledby="v-pills-geo-tab">
+
+                                                    <div class="col-lg-12 align-self-center">
+                                                        <div class="single-pro-detail">
+                                                            <p class="mb-1">Insight Tutorial</p>
+                                                            <div class="custom-border mb-3"></div>
+                                                            <h3 class="pro-title">Geospatial Tutorial</h3>
+                                                            <p class="text-muted mb-0">Geospatial Capabilities with Restaurant use case.</p> 
+                                                            <ul class="list-inline mb-2 product-review">
+                                                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                                                <li class="list-inline-item"><i class="mdi mdi-star-half text-warning"></i></li>
+                                                                <li class="list-inline-item">4.5 (30 reviews)</li>
+                                                            </ul>
+                                                            <h6 class="text-muted font-13">Features :</h6> 
+                                                            <ul class="list-unstyled pro-features border-0">
+                                                                <li>How Geospatial data is stored and retrieved</li>
+                                                                <li>Search options for Geolocation, range and boundaries</li>
+                                                                <li>Python code for Map visualization</li>
+                                                            </ul>
+                                                            <h6 class="text-muted font-13 d-inline-block align-middle mr-2">Languages :</h6> 
+                                                            <div class="radio2 radio-info2 form-check-inline ml-2">
+                                                                <i class="mdi mdi-language-python"></i>
+                                                            </div>
+                                                            <div class="form-check-inline ml-2">&nbsp;</div>
+                                                            <h6 class="text-muted font-13">Pre-Configuration :</h6> 
+                                                            <p>The dataset for this tutorial consists of 100 documents, each containing metadata about one restaurant.</p>
+                                                            <p>Click on the button below to generate the dataset</p>
+                                                            <p class="lead mb-0">
+                                                                IMPORTANT: Make sure the database connection is valid before clicking on the button.
+                                                            </p>
+                                                            <div class="form-check-inline ml-2">&nbsp;</div>
+                                                            <a href="#" class="btn btn-primary btn-sm text-white px-4 d-inline-block" onclick="createdata('geo')">
+                                                                <i class="mdi mdi mdi-buffer mr-2"></i>Generate Data
+                                                            </a>
+                                                            <div class="form-group col-sm-1">
+                                                                <div class="card-body">    
+                                                                    <a href="#" id="gensuccess" class="badge badge-success" style="display:none;">Data Created Successfully</a>
+                                                                    <a href="#" id="genfail" class="badge badge-danger" style="display:none;">Data Creation Failed</a>
+                                                                </div>
+                                                            </div>                                                            
+                                                            <div class="form-check-inline ml-2">&nbsp;<br/><br/></div>
+
+                                                            <h6 class="text-muted font-13">Tutorial Zip File Link :</h6> 
+                                                            <p class="text-primary">
+                                                                <a href="../assets/tutorials/geo/geoset-tutorial/redis/working_with_geospatial.md" target="_new" class="text-primary">
+                                                                    Click here to access the tutorial file
+                                                                </a>
+                                                            </p>
+                                                            <p>Copy this URL to use on Insight:</p>
+                                                            <p class="text-primary">http://127.0.0.1:5001/assets/tutorials/geo/geo.zip</p>                                                            
+                                                            <div class="form-check-inline ml-2">&nbsp;</div>
+
+                                                            <h6 class="text-muted font-13">Demo Navigation :</h6> 
+                                                            
+                                                            <div class="form-check-inline ml-2">&nbsp;</div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="tab-pane fade" id="v-pills-vector" role="tabpanel" aria-labelledby="v-pills-vector-tab">
+                                                    <p class="text-muted mb-0">
+                                                        Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
+                                                        coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next
+                                                        level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
+                                                        booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco
+                                                            ad vinyl cillum PBR. Homo nostrud organic.
+                                                    </p>
+                                                </div>
+                                                <div class="tab-pane fade show" id="v-pills-search" role="tabpanel" aria-labelledby="v-pills-search-tab">
+                                                    <p class="text-muted mb-0">
+                                                        Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
+                                                        coffee squid. Exercitation commodo enim craft beer mlkshk +1 labore velit, blog sartorial PBR leggings next
+                                                        level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
+                                                        booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco
+                                                            ad vinyl cillum PBR. 
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--end card-body-->
+                            </div>                            
+
+                        </div><!--end col-->
+                    </div>
+                </div><!-- container -->
+
+                <footer class="footer text-center text-sm-left">
+                    &copy; 2024 Redis
+                </footer><!--end footer-->
+            </div>
+            <!-- end page content -->
+        </div>
+        <!-- end page-wrapper -->
+
+        
+
+
+        <!-- jQuery  -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/metismenu.min.js"></script>
+        <script src="../assets/js/waves.js"></script>
+        <script src="../assets/js/feather.min.js"></script>
+        <script src="../assets/js/simplebar.min.js"></script>
+        <script src="../assets/js/moment.js"></script>
+
+        <!-- App js -->
+        <script src="../assets/js/app.js"></script>
+
+        <!-- jQuery  -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+        
+        <script type="text/javascript">
+        
+            $(document).ready(function() {
+                console.log("page loaded");
+            });
+
+
+            function testlogin() {
+            console.log("Testing login to Redis instance");
+            $("#connsuccess").hide();
+            $("#connfail").hide();
+            var serverurl = "http://127.0.0.1:5001/testconn"
+            var redis_host = $("#redis_host").val();
+            var redis_port = $("#redis_port").val();
+            var redis_user = $("#redis_user").val();
+            var redis_pass = $("#redis_pass").val();
+            var data = 'redis_host=' + redis_host + '&redis_port=' + redis_port + '&redis_user=' + redis_user + '&redis_pass=' + redis_pass;
+
+            let request = new XMLHttpRequest();
+            request.open("POST", serverurl);
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            request.send(data);
+            request.onload = () => {
+                var responseMsg = request.response;
+                console.log(responseMsg);
+                if (responseMsg == "success") {
+                    $("#connsuccess").show();
+                }
+                else {
+                    $("#connfail").show();
+                }
+            }
+        }
+
+
+        function createdata(dataset) {
+            console.log("Testing login to Redis instance");
+            $("#connsuccess").hide();
+            $("#connfail").hide();
+            var serverurl = "http://127.0.0.1:5001/createdata"
+            var redis_host = $("#redis_host").val();
+            var redis_port = $("#redis_port").val();
+            var redis_user = $("#redis_user").val();
+            var redis_pass = $("#redis_pass").val();
+            var data = 'dataset=' + dataset + '&redis_host=' + redis_host + '&redis_port=' + redis_port + '&redis_user=' + redis_user + '&redis_pass=' + redis_pass;
+
+            let request = new XMLHttpRequest();
+            request.open("POST", serverurl);
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            request.send(data);
+            request.onload = () => {
+                var responseMsg = request.response;
+                console.log(responseMsg);
+                if (responseMsg == "success") {
+                    $("#gensuccess").show();
+                }
+                else {
+                    $("#genfail").show();
+                }
+            }
+        }
+
+    
+        </script>   
+
+
+    </body>
+
+</html>

@@ -39,8 +39,7 @@
                                 </div><!--end row-->                                                              
                             </div><!--end page-title-box-->
                         </div><!--end col-->
-                    </div><!--end row-->
-                    <!-- end page title end breadcrumb -->
+                    </div>
                     <!-- Redis Connection info -->
                     <div class="row">
                         <div class="col-sm-12">
@@ -82,8 +81,33 @@
                                 </div><!--end card-body-->
                             </div>
                         </div><!--end col-->
-                    </div><!--end row-->
-                    <!-- end page title end breadcrumb -->
+                    </div>
+                    <!-- Intro and Explanation -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">                                                    
+                                    <div class="post-title mt-4">
+                                        <div class="row">
+                                            <div class="col">
+                                                <span class="badge badge-soft-primary">Intro</span>
+                                            </div><!--end col-->
+                                            <div class="col-auto">
+                                                <span class="text-muted"><i class="far fa-calendar mr-1"></i>Last Updated Oct 2024</span>
+                                            </div><!--end col-->
+                                        </div><!--end row-->
+                                       
+                                        <h5 href="#" class="font-20 font-weight-bold d-block mt-3 mb-4">Welcome to Demo-In-A-Box.</h5>
+                                        <span class="font-15 bg-light py-2 px-3 rounded">Overview and Running Instructions.</span>
+                                        <p class="font-15 mt-4">
+                                            This is where we're going to write how to use this demo container, assuming we end up using it at all.
+                                        </p>
+                                    </div>
+                                </div>    
+                            </div>   
+                        </div>                        
+                    </div>                    
+                    <!-- end intro -->
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="card">
@@ -134,17 +158,17 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="pricingTable1 text-center">
-                                        <h6 class="title1 pt-3 pb-2 m-0">Hash Example</h6>
-                                        <p class="text-muted p-3 mb-0">An employee self-service UI where the user data is stored as hashes in Redis.</p>
+                                        <h6 class="title1 pt-3 pb-2 m-0">Insight Tutorials</h6>
+                                        <p class="text-muted p-3 mb-0">Assets to run tutorials on Redis Insight.</p>
                                        <hr class="hr-dashed">
                                         <div class="bottombutton">
-                                            <a href="#" class="btn btn-dark py-2 px-5 font-16"><span>Click Here</span></a>
+                                            <a href="/insight" class="btn btn-dark py-2 px-5 font-16"><span>Click Here</span></a>
                                         </div>  
                                     </div><!--end pricingTable-->
                                 </div><!--end card-body-->
                             </div> <!--end card-->                                   
                         </div><!--end col-->
-                    </div><!--end row-->
+                    </div>
 
                 </div><!-- container -->
 
@@ -187,7 +211,7 @@
             console.log("Testing login to Redis instance");
             $("#connsuccess").hide();
             $("#connfail").hide();
-            var serverurl = "http://127.0.0.1/testconn"
+            var serverurl = "http://127.0.0.1:5001/testconn"
             var redis_host = $("#redis_host").val();
             var redis_port = $("#redis_port").val();
             var redis_user = $("#redis_user").val();

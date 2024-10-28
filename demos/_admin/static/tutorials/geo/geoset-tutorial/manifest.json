@@ -1,0 +1,27 @@
+{
+  "type": "group",
+  "id": "geoset",
+  "label": "Geo Set",
+  "args": {
+    "withBorder": true,
+    "initialIsOpen": true
+  },
+  "children": [
+    {
+      "type": "internal-link",
+      "id": "intro",
+      "label": "Introduction",
+      "args": {
+        "path": "/redis/intro.md"
+      }
+    },
+    {
+      "type": "internal-link",
+      "id": "working_with_geospatial",
+      "label": "Working with Geospatial",
+      "args": {
+        "path": "/redis/working_with_geospatial.md"
+      }
+    }
+  ]
+}
