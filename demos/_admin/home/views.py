@@ -132,15 +132,16 @@ def create_index(r, prefix, attributes):
 
 def get_jupyter_token():
     token = ''
-    with open(r'/root/.local/share/jupyter/runtime/jpserver-7-open.html', 'r') as f:
+    with open(r'jupyter_token.html', 'r') as f:
         lines = f.readlines()
         for line in lines:
             if line.find('token=') != -1:
                 start = line.index('token=') + 6
-                end = line.index('" />')
+                end = line.index('/>') - 2
                 for idx in range(start, end):
                     token = token + line[idx]
-    return token 
+                break
+        return token
 
 
 # Basic Content
