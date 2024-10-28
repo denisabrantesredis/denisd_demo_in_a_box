@@ -130,6 +130,17 @@ def create_index(r, prefix, attributes):
         result = f"FAILED to create index: {ex}"
     return result    
 
+def get_jupyter_token():
+    token = ''
+    with open(r'/root/.local/share/jupyter/runtime/jpserver-7-open.html', 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            if line.find('token=') != -1:
+                start = line.index('token=') + 6
+                end = line.index('" />')
+                for idx in range(start, end):
+                    token = token + line[idx]
+    return token
 
 
 # Basic Content
@@ -151,8 +162,10 @@ def index():
         redis_port = session['redis_port']
         redis_user = session['redis_user']
         redis_pass = session['redis_pass']
+
+        token = get_jupyter_token()
                 
-    return render_template('/home.html', redis_host=redis_host,redis_port=redis_port,redis_user=redis_user,redis_pass=redis_pass)
+    return render_template('/home.html', redis_host=redis_host,redis_port=redis_port,redis_user=redis_user,redis_pass=redis_pass,token=token)
 
 @home_bp.route('/testconn', methods=['POST'])
 def testconn():
