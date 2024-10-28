@@ -12,7 +12,7 @@ The restaurant dataset contains 100 documents containing examples of restaurants
 
 In this example, we will seach by coordinates, with the option of filtering by metadata.
 
-The <a href="/geodemo">Geodemo</a> page contains a working example of an application that uses the coordinates to display data on a map.
+The <a href="http://127.0.0.1/geodemo">Geodemo</a> page contains a working example of an application that uses the coordinates to display data on a map.
 
 &nbsp;
 
@@ -22,7 +22,7 @@ Use the following commands to search for a restaurant near Chicago, IL, USA:
 
 ```redis Search by Coordinates
 
-GEOSEARCH "idx:restaurant_geo" FROMLONLAT -94.41551 39.09112 BYRADIUS 130 M
+GEOSEARCH "idx:restaurant_geo" FROMLONLAT -94.41551 39.09112 BYRADIUS 30 MI
 
 ```
 
