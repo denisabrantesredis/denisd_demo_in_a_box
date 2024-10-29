@@ -422,7 +422,7 @@ def createdata():
                 keysize = 5
                 keyprefix = "users"
 
-                with open('./static/tutorials/sm/users.json') as f:
+                with open('../static/tutorials/sm/users.json') as f:
                     result_list = json.load(f)
 
                     pipe = redis_client.pipeline(transaction=False)
@@ -460,5 +460,6 @@ def createdata():
 
                 create_index(redis_client, keyprefix, attributes)
                 return "success"            
-    except:
+    except Exception as ex:
+        print(f"--> Error Generating data: {ex}")
         return "fail"
