@@ -1,3 +1,4 @@
+import os
 import sys
 import json
 import time
@@ -422,7 +423,8 @@ def createdata():
                 keysize = 5
                 keyprefix = "users"
 
-                with open('../static/tutorials/sm/users.json') as f:
+                filepath = os.path.join(os.path.dirname(__file__), '../static/tutorials/sm/users.json')
+                with open(filepath) as f:
                     result_list = json.load(f)
 
                     pipe = redis_client.pipeline(transaction=False)
