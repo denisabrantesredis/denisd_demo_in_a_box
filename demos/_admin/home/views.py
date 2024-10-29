@@ -417,5 +417,48 @@ def createdata():
                 res = pipe.execute()
                 create_index(redis_client, keyprefix, attributes)
                 return "success"
+            
+            if dataset == 'session':
+                keysize = 5
+                keyprefix = "users"
+
+                with open('./static/tutorials/sm/users.json') as f:
+                    result_list = json.load(f)
+
+                    pipe = redis_client.pipeline(transaction=False)
+                    counter = 0
+                    for doc in result_list:
+                        doc_key = f"{keyprefix}:{doc['version']}"
+                        pipe.hset(doc_key, mapping=doc)
+                        counter = counter + 1
+
+                    responses = pipe.execute()
+
+                attributes = [
+                    {"name":"version", "type":"id", "range":""},
+                    {"name":"root", "type":"id", "range":""},
+                    {"name":"userKey", "type":"id", "range":""},
+                    {"name":"username", "type":"id", "range":""},
+                    {"name":"tmNbr", "type":"number_int", "range":""},
+                    {"name":"name", "type":"id", "range":""},
+                    {"name":"phone", "type":"id", "range":""},
+                    {"name":"fax", "type":"id", "range":""},
+                    {"name":"email", "type":"id", "range":""},
+                    {"name":"mobile", "type":"id", "range":""},
+                    {"name":"title", "type":"id", "range":""},
+                    {"name":"unitId", "type":"number_int", "range":""},
+                    {"name":"locationAbbr", "type":"id", "range":""},
+                    {"name":"location", "type":"id", "range":""},
+                    {"name":"state", "type":"id", "range":""},
+                    {"name":"department", "type":"id", "range":""},
+                    {"name":"directoryDepartmentKeys", "type":"id", "range":""},
+                    {"name":"workbrainJobId", "type":"number_int", "range":""},
+                    {"name":"atStoreFlag", "type":"id", "range":""},
+                    {"name":"contactKey", "type":"id", "range":""},
+                    {"name":"contactSearchableFlag", "type":"id", "range":""}
+                ]
+
+                create_index(redis_client, keyprefix, attributes)
+                return "success"            
     except:
         return "fail"
