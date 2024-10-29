@@ -412,7 +412,7 @@ def createdata():
                         {"name":"address", "type":"add_street", "range":""},
                         {"name":"phone", "type":"phone", "range":""},
                         {"name":"coords", "type":"coords", "range":""},
-                        {"name":"cousine", "type":"list_option", "range":"['Italian','Asian','BBQ','Pizza','Breakfast','Mexican']"},
+                        {"name":"cousine", "type":"list_option", "range":"Italian,Asian,BBQ,Pizza,Breakfast,Mexican"},
                     ]
 
                     # Generate Fake values
