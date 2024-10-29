@@ -461,5 +461,5 @@ def createdata():
                 create_index(redis_client, keyprefix, attributes)
                 return "success"            
     except Exception as ex:
-        print(f"--> Error Generating data: {ex}")
-        return "fail"
+        print(f"--> Error Generating data: {ex}", file=sys.stdout)
+        return f"fail - {ex}"
