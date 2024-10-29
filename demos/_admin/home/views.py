@@ -359,8 +359,9 @@ def get_user_data(user_key=None):
                             latitude = latitude,
                             time_elapsed = round(elapsed,4)*1000
                             )        
-    except:
-        return "fail"
+    except Exception as ex:
+        print(f"--> Error getting user data: {ex}", file=sys.stdout)
+        return f"fail - {ex}"
 
 # Insight Tutorials
 @home_bp.route('/insight')
