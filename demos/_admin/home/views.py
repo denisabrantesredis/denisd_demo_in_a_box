@@ -276,10 +276,15 @@ def get_geodata():
     return docs_dict
 
 
-# My Redis Demo Content
-@home_bp.route('/login', methods=['POST'])
+# Session  Management Demo Content
+@home_bp.route('/demos/sm/home')
+def sm_home():
+    print("--> Loading Session Management Demo Home Page")
+    return render_template('/sm_home.html')
+
+@home_bp.route('/demos/sm/login', methods=['POST'])
 def connect():
-    print("--> User Login", file=sys.stdout)
+    print("--> Session Management: User Login", file=sys.stdout)
     username = request.values.get('username')
     password = request.values.get('password')
 
@@ -290,12 +295,11 @@ def connect():
     for doc in user_doc:
         user_key = doc['id']
         key = user_key.split(":")[1]
-
     return key
 
-@home_bp.route('/user/<user_key>')
+@home_bp.route('/demos/sm/user/<user_key>')
 def get_user_data(user_key=None):
-    print("--> User Data", file=sys.stdout)
+    print("--> Session Management: User Data", file=sys.stdout)
 
     # fetch user key from Redis
     user_key = f"users:{user_key}"
@@ -327,7 +331,7 @@ def get_user_data(user_key=None):
     longitude = decoded["longitude"]
     latitude = decoded["latitude"]
        
-    return render_template('/main.html', 
+    return render_template('/sm_main.html', 
                            key = user_key,
                            userKey = userKey,
                            tmNbr = tmNbr,

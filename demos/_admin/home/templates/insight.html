@@ -101,12 +101,13 @@
                                                 <a class="nav-link waves-effect waves-light active" id="v-pills-geo-tab" data-toggle="pill" href="#v-pills-geo" role="tab" aria-controls="v-pills-geo" aria-selected="true">Geospatial</a>
                                                 <a class="nav-link waves-effect waves-light" id="v-pills-vector-tab" data-toggle="pill" href="#v-pills-vector" role="tab" aria-controls="v-pills-vector" aria-selected="false">Vectors</a>
                                                 <a class="nav-link waves-effect waves-light" id="v-pills-search-tab" data-toggle="pill" href="#v-pills-search" role="tab" aria-controls="v-pills-search" aria-selected="false">Search</a>
+                                                <a class="nav-link waves-effect waves-light" id="v-pills-session-tab" data-toggle="pill" href="#v-pills-session" role="tab" aria-controls="v-pills-session" aria-selected="false">Session Management</a>
                                             </div>
                                         </div>
                                         <div class="col-sm-9">
                                             <div class="tab-content mo-mt-2" id="v-pills-tabContent">
+                                                <!-- Geo Demo -->
                                                 <div class="tab-pane active" id="v-pills-geo" role="tabpanel" aria-labelledby="v-pills-geo-tab">
-
                                                     <div class="col-lg-12 align-self-center">
                                                         <div class="single-pro-detail">
                                                             <p class="mb-1">Insight Tutorial</p>
@@ -144,8 +145,8 @@
                                                             </a>
                                                             <div class="form-group col-sm-1">
                                                                 <div class="card-body">    
-                                                                    <a href="#" id="gensuccess" class="badge badge-success" style="display:none;">Data Created Successfully</a>
-                                                                    <a href="#" id="genfail" class="badge badge-danger" style="display:none;">Data Creation Failed</a>
+                                                                    <a href="#" id="geogensuccess" class="badge badge-success" style="display:none;">Data Created Successfully</a>
+                                                                    <a href="#" id="geogenfail" class="badge badge-danger" style="display:none;">Data Creation Failed</a>
                                                                 </div>
                                                             </div>
                                                             <div class="form-check-inline ml-2">&nbsp;<br/><br/></div>
@@ -167,8 +168,8 @@
                                                             <div class="form-check-inline ml-2">&nbsp;</div>
                                                         </div>
                                                     </div>
-
                                                 </div>
+                                                <!-- Vector Search -->
                                                 <div class="tab-pane fade" id="v-pills-vector" role="tabpanel" aria-labelledby="v-pills-vector-tab">
                                                     <p class="text-muted mb-0">
                                                         Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
@@ -178,6 +179,7 @@
                                                             ad vinyl cillum PBR. Homo nostrud organic.
                                                     </p>
                                                 </div>
+                                                <!-- Full Text Search -->
                                                 <div class="tab-pane fade show" id="v-pills-search" role="tabpanel" aria-labelledby="v-pills-search-tab">
                                                     <p class="text-muted mb-0">
                                                         Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
@@ -187,6 +189,71 @@
                                                             ad vinyl cillum PBR. 
                                                     </p>
                                                 </div>
+                                                <!-- Session Management -->
+                                                <div class="tab-pane active" id="v-pills-geo" role="tabpanel" aria-labelledby="v-pills-geo-tab">
+                                                    <div class="col-lg-12 align-self-center">
+                                                        <div class="single-pro-detail">
+                                                            <p class="mb-1">Session Management</p>
+                                                            <div class="custom-border mb-3"></div>
+                                                            <h3 class="pro-title">Session Management Demo</h3>
+                                                            <p class="text-muted mb-0">Session Management Capabilities with employee Intranet.</p> 
+                                                            <ul class="list-inline mb-2 product-review">
+                                                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                                                <li class="list-inline-item"><i class="mdi mdi-star-half text-warning"></i></li>
+                                                                <li class="list-inline-item">4.5 (20 reviews)</li>
+                                                            </ul>
+                                                            <h6 class="text-muted font-13">Features :</h6> 
+                                                            <ul class="list-unstyled pro-features border-0">
+                                                                <li>Getting user data from Redis</li>
+                                                                <li>Direct key access instead of search</li>
+                                                                <li>Other cool stuff I can't think of</li>
+                                                            </ul>
+                                                            <h6 class="text-muted font-13 d-inline-block align-middle mr-2">Languages :</h6> 
+                                                            <div class="radio2 radio-info2 form-check-inline ml-2">
+                                                                <i class="mdi mdi-language-python"></i>
+                                                            </div>
+                                                            <div class="form-check-inline ml-2">&nbsp;</div>
+                                                            <h6 class="text-muted font-13">Pre-Configuration :</h6> 
+                                                            <p>The dataset for this tutorial consists of 1000 documents, each containing metadata about an employee.</p>
+                                                            <p>Click on the button below to generate the dataset</p>
+                                                            <p class="lead mb-0">
+                                                                IMPORTANT: Make sure the database connection is valid before clicking on the button.
+                                                            </p>
+                                                            <div class="form-check-inline ml-2">&nbsp;</div>
+                                                            <a href="#" class="btn btn-primary btn-sm text-white px-4 d-inline-block" onclick="createdata('session')">
+                                                                <i class="mdi mdi mdi-buffer mr-2"></i>Generate Data
+                                                            </a>
+                                                            <div class="form-group col-sm-1">
+                                                                <div class="card-body">    
+                                                                    <a href="#" id="smgensuccess" class="badge badge-success" style="display:none;">Data Created Successfully</a>
+                                                                    <a href="#" id="smgenfail" class="badge badge-danger" style="display:none;">Data Creation Failed</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-check-inline ml-2">&nbsp;<br/><br/></div>
+
+                                                            <h6 class="text-muted font-13">Tutorial Zip File Link :</h6> 
+                                                            <p class="text-primary">
+                                                                <a href="#" target="_new" class="text-primary">
+                                                                    Click here to access the tutorial file
+                                                                </a>
+                                                            </p>
+                                                            <p>Copy this URL to use on Insight:</p>
+                                                            <p class="text-primary">
+                                                                no link available
+                                                            </p>
+                                                            <div class="form-check-inline ml-2">&nbsp;</div>
+
+                                                            <h6 class="text-muted font-13">Demo Navigation :</h6> 
+                                                            <p>Demo Access: <a href="http://127.0.0.1:80/demos/sm/home">Click Here</a></p>
+                                                            <p> Login as user <b>amanda</b>, any password.</p>
+                                                            <div class="form-check-inline ml-2">&nbsp;</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -279,10 +346,12 @@
                 var responseMsg = request.response;
                 console.log(responseMsg);
                 if (responseMsg == "success") {
-                    $("#gensuccess").show();
+                    if (dataset == "geo") { $("#geogensuccess").show(); }
+                    if (dataset == "session") { $("#smgensuccess").show(); }
                 }
                 else {
-                    $("#genfail").show();
+                    if (dataset == "geo") { $("#geogenfail").show(); }
+                    if (dataset == "session") { $("#smgenfail").show(); }
                 }
             }
         }
