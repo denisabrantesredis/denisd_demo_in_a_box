@@ -302,61 +302,65 @@ def connect():
 def get_user_data(user_key=None):
     print("--> Session Management: User Data", file=sys.stdout)
 
-    # fetch user key from Redis
-    user_key = f"users:{user_key}"
-    print(f"--> SEARCH: {user_key}", file=sys.stdout)
-    start = time.perf_counter()
-    user_doc = r.hgetall(user_key)
-    end = time.perf_counter()
-    elapsed = end - start
-    decoded = {key.decode('ascii'):user_doc[key].decode('ascii') for key in user_doc.keys()}
-    userKey = decoded["userKey"]
-    tmNbr = decoded["tmNbr"]
-    name = decoded["name"]
-    phone = decoded["phone"]
-    fax = decoded["fax"]
-    email = decoded["email"]
-    mobile = decoded["mobile"]
-    title = decoded["title"]
-    unitId = decoded["unitId"]
-    locationAbbr = decoded["locationAbbr"]
-    location = decoded["location"]
-    state = decoded["state"]
-    department = decoded["department"]
-    directoryDepartmentKeys = decoded["directoryDepartmentKeys"]
-    workbrainJobId = decoded["workbrainJobId"]
-    atStoreFlag = decoded["atStoreFlag"]
-    contactKey = decoded["contactKey"]
-    contactSearchableFlag = decoded["contactSearchableFlag"]
-    lastUpdated = decoded["lastUpdated"]
-    longitude = decoded["longitude"]
-    latitude = decoded["latitude"]
-       
-    return render_template('/sm_main.html', 
-                           key = user_key,
-                           userKey = userKey,
-                           tmNbr = tmNbr,
-                           name = name,
-                           phone = phone,
-                           fax = fax,
-                           email = email,
-                           mobile = mobile,
-                           title = title,
-                           unitId = unitId,
-                           locationAbbr = locationAbbr,
-                           location = location,
-                           state = state,
-                           department = department,
-                           directoryDepartmentKeys = directoryDepartmentKeys,
-                           workbrainJobId = workbrainJobId,
-                           atStoreFlag = atStoreFlag,
-                           contactKey = contactKey,
-                           contactSearchableFlag = contactSearchableFlag,
-                           lastUpdated = lastUpdated,
-                           longitude = longitude,
-                           latitude = latitude,
-                           time_elapsed = round(elapsed,4)*1000
-                           )
+    try:
+        r = get_redis_client(session['redis_host'], session['redis_port'], session['redis_user'], session['redis_pass'])
+        
+        user_key = f"users:{user_key}"
+        print(f"--> SEARCH: {user_key}", file=sys.stdout)
+        start = time.perf_counter()
+        user_doc = r.hgetall(user_key)
+        end = time.perf_counter()
+        elapsed = end - start
+        decoded = {key.decode('ascii'):user_doc[key].decode('ascii') for key in user_doc.keys()}
+        userKey = decoded["userKey"]
+        tmNbr = decoded["tmNbr"]
+        name = decoded["name"]
+        phone = decoded["phone"]
+        fax = decoded["fax"]
+        email = decoded["email"]
+        mobile = decoded["mobile"]
+        title = decoded["title"]
+        unitId = decoded["unitId"]
+        locationAbbr = decoded["locationAbbr"]
+        location = decoded["location"]
+        state = decoded["state"]
+        department = decoded["department"]
+        directoryDepartmentKeys = decoded["directoryDepartmentKeys"]
+        workbrainJobId = decoded["workbrainJobId"]
+        atStoreFlag = decoded["atStoreFlag"]
+        contactKey = decoded["contactKey"]
+        contactSearchableFlag = decoded["contactSearchableFlag"]
+        lastUpdated = decoded["lastUpdated"]
+        longitude = decoded["longitude"]
+        latitude = decoded["latitude"]
+        
+        return render_template('/sm_main.html', 
+                            key = user_key,
+                            userKey = userKey,
+                            tmNbr = tmNbr,
+                            name = name,
+                            phone = phone,
+                            fax = fax,
+                            email = email,
+                            mobile = mobile,
+                            title = title,
+                            unitId = unitId,
+                            locationAbbr = locationAbbr,
+                            location = location,
+                            state = state,
+                            department = department,
+                            directoryDepartmentKeys = directoryDepartmentKeys,
+                            workbrainJobId = workbrainJobId,
+                            atStoreFlag = atStoreFlag,
+                            contactKey = contactKey,
+                            contactSearchableFlag = contactSearchableFlag,
+                            lastUpdated = lastUpdated,
+                            longitude = longitude,
+                            latitude = latitude,
+                            time_elapsed = round(elapsed,4)*1000
+                            )        
+    except:
+        return "fail"
 
 # Insight Tutorials
 @home_bp.route('/insight')
